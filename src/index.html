@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Number Validator</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+    <script src="./js/Main.js" defer></script>
+  </head>
+  <body class="flex flex-col items-center justify-center min-h-screen">
+    <div
+      id="Number-Validator"
+      class="bg-slate-300 flex flex-col w-11/12 md:w-2/4 p-8 rounded drop-shadow- text-center text-lg">
+      <h1 class="text-4xl text-white font-bold mb-4 drop-shadow-lg">
+        US phone number validator
+      </h1>
+      <p id="answer" class="mb-4">placeholder output</p>
+      <form action="javascript: handleSubmit()">
+        <label for="phone" class="">Enter your phone number:</label>
+        <input
+          class="block w-full text-center border rounded shadow-inner mb-4"
+          id="phone"
+          name="phone"
+          type="text"
+          placeholder="1 555-555-5555" />
+        <input
+          class="bg-green-600 text-white rounded p-2 w-full font-bold active:bg-green-500"
+          value="Submit ➡️"
+          type="submit" />
+      </form>
+    </div>
+  </body>
+</html>
