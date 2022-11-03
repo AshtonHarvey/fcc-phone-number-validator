@@ -6,31 +6,19 @@ function handleSubmit() {
   output.innerHTML = validateNumber(input.value.trim());
 }
 
-function validateNumber(number) {
-  let regex = /[!-'*-,./:-~]/gi;
-  let regexNumbers = /[0-9]/gi;
-  let symbols = number.match(regex);
-  let extractedNumber = number.match(regexNumbers);
-  let numbers = number.split("");
+function validateNumber(str) {
+  let regex = /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/;
 
-  console.log(symbols);
-  console.log(extractedNumber);
-  console.log(numbers);
-
-  if (
-    symbols === null &&
-    (extractedNumber.length === 10 ||
-      (extractedNumber.length === 11 && numbers[0] == 1))
-  ) {
-    //validate as true
-    return true;
-  } else {
-    // validate as false
-    return false;
-  }
+  console.log(regex.test(str));
+  return regex.test(str);
 }
 
-// PAIN
-//rewrite using regex to validate opening and closing () as well as number of numbers before or after - ?
-// use original input "number"
-// write function to whole everything in the if
+//learned from hints. researched to understand because my idea was wayyyyyy off 😞
+// start of input
+// look for 1 or space. space is optional
+// first check is optional
+// look for 3 digits with or without Parentheses
+// look for space or hyphen but is optional
+// look for next 3 digits without parentheses
+// look for space or hyphen but optional
+// look for 4 digits at the end
